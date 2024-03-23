@@ -29,8 +29,8 @@ function HomePage() {
         <ul className="ulc">
           <li>
             <img
-              src={theme === "dark" ? "/assets/logo1.png" : "/assets/logo2.png"}
-              alt="Logo"
+              src={theme === "dark" ? "/assets/moon.png" : "/assets/sun.png"}
+              alt="Logo" onClick={toggleTheme}
             />
           </li>
           <li>
@@ -45,7 +45,7 @@ function HomePage() {
             <a href="#login">[Login]</a>
           </li>
           <li>
-            <a onClick={toggleTheme}>[Toggle]</a>
+            <a>[Profile]</a>
           </li>
         </ul>
       </nav>
