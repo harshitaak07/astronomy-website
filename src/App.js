@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import HomePage from './components/home';
 import Login from './components/login';
-import Register from './components/register';
+import RegisterPage from './components/register';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" class="hori">
       <HomePage/>
+      <RegisterPage/>
       <Login/>
-      <Register/>
     </div>
   );
 }
