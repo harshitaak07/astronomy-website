@@ -171,3 +171,11 @@ font-family: "Source Code Pro", monospace;
     margin-left: 35px;
     margin-top: 25px;
 }
+.sth img {
+    width: 10%;
+    height: auto;
+}
+.sth{
+    display: flex;
+    flex-direction: row;
+}

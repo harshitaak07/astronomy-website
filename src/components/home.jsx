@@ -30,7 +30,8 @@ function HomePage() {
           <li>
             <img
               src={theme === "dark" ? "/assets/moon.png" : "/assets/sun.png"}
-              alt="Logo" onClick={toggleTheme}
+              alt="Logo"
+              onClick={toggleTheme}
             />
           </li>
           <li>
@@ -45,13 +46,15 @@ function HomePage() {
             <a href="#login">[Login]</a>
           </li>
           <li>
-            <a>[Profile]</a>
+            <a href="#astronomy">[Astronomy]</a>
           </li>
         </ul>
       </nav>
       <div style={{ display: "flex" }}>
         <div className="container2">
-          <h1 style={{ textAlign: "left" }}>Welcome!</h1>
+          <div className="sth">
+            <h1 style={{ textAlign: "left" }}>Welcome!</h1>
+          </div>
           <p style={{ textAlign: "left" }}>
             In the vast expanse of the cosmos, celestial bodies dance in an
             eternal ballet, weaving a tapestry of wonders that captivate the
