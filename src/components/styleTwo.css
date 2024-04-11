@@ -7,20 +7,22 @@ body {
 .dark .body{
     background-color: black;
     color: white;
+    height: 100vh;
 }
 .light .body{
     background-color: white;
     color: black;
+    height: 100vh;
 }
 .container {
-    width: 18.5%;
-    height: 25%;
+    width: 19%;
+    height: 60%;
     border-radius: 2%; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
     padding: 2% 2% 2% 2%;
-    margin: 5% 0% 0 8%;
+    margin: 6% 0% 0% 8%;
     text-align: left;
 }
 .dark .container{
@@ -78,8 +80,8 @@ section {
 }
 section .imgBx {
     width: 30%;
-    height: 55%;
-    margin: 5% 0 0 3%;
+    height: 73%;
+    margin: 6% 0 0 3%;
 }
 section .imgBx img {
     width: 112%;
