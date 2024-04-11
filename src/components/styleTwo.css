@@ -16,13 +16,12 @@ body {
 }
 .container {
     width: 19%;
-    height: 60%;
-    border-radius: 2%; 
+    height: 61%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
     padding: 2% 2% 2% 2%;
-    margin: 6% 0% 0% 8%;
+    margin: 6% 0% 0% 0%;
     text-align: left;
 }
 .dark .container{
@@ -52,7 +51,7 @@ form {
 .container label {
     display:block;
     margin-bottom: 3%;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 .container input {
     margin-bottom: 2%;
@@ -81,21 +80,27 @@ section {
 section .imgBx {
     width: 30%;
     height: 73%;
-    margin: 6% 0 0 3%;
+    margin: 6% 0% 0 8%;
+}
+.light section .imgBx{
+    border: 1px solid black; 
+}
+.dark section .imgBx{
+    border: 1px solid silver; 
 }
 section .imgBx img {
-    width: 112%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     background-size: cover;
     object-fit: contain;
     border-radius: 3%;
-    margin: 0% 0 2% 118%;
+    margin: 0% 0 1% 5.5%;
 }
 .button-container {
     display: flex;
     flex-direction: column;
     gap: 7%;
-    margin-top: 10%; 
+    margin-top: 9%; 
 }  
 button {
     width: 100%;

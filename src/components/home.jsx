@@ -35,9 +35,6 @@ function HomePage() {
             />
           </li>
           <li>
-            <img src="/assets/profile.png" alt="Logo" />
-          </li>
-          <li>
             <a className="active" href="#home">
               [Home]
             </a>
@@ -50,6 +47,9 @@ function HomePage() {
           </li>
           <li>
             <a href="#astronomy">[Astronomy]</a>
+          </li>
+          <li>
+            <img src="/assets/profile.png" alt="Logo" />
           </li>
         </ul>
       </nav>
