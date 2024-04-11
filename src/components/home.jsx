@@ -35,6 +35,9 @@ function HomePage() {
             />
           </li>
           <li>
+            <img src="/assets/profile.png" alt="Logo" />
+          </li>
+          <li>
             <a className="active" href="#home">
               [Home]
             </a>
@@ -52,9 +55,7 @@ function HomePage() {
       </nav>
       <div style={{ display: "flex" }}>
         <div className="container2">
-          <div className="sth">
-            <h1 style={{ textAlign: "left" }}>Welcome!</h1>
-          </div>
+          <h1 style={{ textAlign: "left" }}>Welcome!</h1>
           <p style={{ textAlign: "left" }}>
             In the vast expanse of the cosmos, celestial bodies dance in an
             eternal ballet, weaving a tapestry of wonders that captivate the

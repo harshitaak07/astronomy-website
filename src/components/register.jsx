@@ -46,7 +46,7 @@ const RegisterPage = () => {
   return (
     <section id="register" className="body">
       <div className="imgBx">
-        <img src="/assets/astronomy2.png" alt="background" />
+        <img src="/assets/astronomyRegister.png" alt="background" />
       </div>
 
       <div className="container">

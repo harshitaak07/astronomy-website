@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <section id="login" className="body">
       <div className="imgBx">
-        <img src="assets/alsoastronomy.png" alt="background" />
+        <img src="assets/astronomyLogin.png" alt="background" />
       </div>
       <div className="container">
         <text>Login</text>
@@ -68,8 +68,8 @@ const Login = () => {
           />
           <div className="button-container">
             <button type="submit">Login</button>
-            <button className="google" type="button">
-              <i className="fab fa-google"></i> Sign In with Google
+            <button type="button">
+              Sign In with Google
             </button>
           </div>
         </form>
