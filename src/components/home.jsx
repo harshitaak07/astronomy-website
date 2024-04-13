@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-
+import { Link } from "react-router-dom";
 function HomePage() {
   const [theme, setTheme] = useState("light");
 
@@ -35,7 +35,7 @@ function HomePage() {
             />
           </li>
           <li>
-            <a className="active" href="#home">
+            <a className="active" href="#">
               [Home]
             </a>
           </li>
