@@ -110,11 +110,20 @@ body {
 }
 .container4 img {
     width: 95%;
+    height: 85%;
+    background-size: cover;
+    object-fit: contain;
+    border-radius: 5%;
+    margin: 8% 4% 2% 170%;
+    transform:translate(-40.57rem);
+}
+.hori .container4 img {
+    width: 95%;
     height: 80%;
     background-size: cover;
     object-fit: contain;
     border-radius: 5%;
-    margin: 6% 0 2% 166%;
+    margin: 6% 1% 2% 166%;
     transform:translate(-40.57rem);
 }
 .dark .container4{

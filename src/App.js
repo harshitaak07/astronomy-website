@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="App" class = "hori">
+    <div className="App" class="hori">
       <Helmet>
         <title>Astronomy</title>
       </Helmet>

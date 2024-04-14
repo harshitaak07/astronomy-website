@@ -14,7 +14,7 @@ body {
     color: black;
     height: 100vh;
 }
-.container {
+.hori .container {
     width: 19%;
     height: 61%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
@@ -22,6 +22,16 @@ body {
     flex-direction: column;
     padding: 2% 2% 2% 2%;
     margin: 6% 0% 0% 0%;
+    text-align: left;
+}
+.container{
+    width: 30%;
+    height: 65%;
+    margin: 9% 0% 0% 0%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    padding: 2% 2% 2% 2%;
     text-align: left;
 }
 .dark .container{
@@ -77,10 +87,15 @@ section {
     display: flex;
     flex-direction: row;
 }
-section .imgBx {
+.hori section .imgBx {
     width: 30%;
     height: 73%;
     margin: 6% 0% 0 8%;
+}
+section .imgBx {
+    width: 40%;
+    height: 73%;
+    margin: 9% 0% 0 13%;
 }
 .light section .imgBx{
     border: 1px solid black; 
