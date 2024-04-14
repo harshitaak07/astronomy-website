@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import "./styleTwo.css";
+import "./regLog.css";
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ValidateForm(formData) {
   const { username, password } = formData;
 
   const usernameRegex = /^[a-zA-Z0-9]{1,15}$/;
   if (!usernameRegex.test(username)) {
-    alert("Invalid username");
+    toast.dark("Invalid username",{className: "toast-message",});
     return false;
   }
 
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){2,}.{10,}$/;
   if (!passwordRegex.test(password)) {
-    alert("Invalid password");
+    toast.dark("Invalid password",{className: "toast-message",});
     return false;
   }
 
@@ -34,8 +36,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (ValidateForm(formData)) {
-      // If form is valid, you can proceed with your logic, for now, just alerting valid form
-      alert("Valid Form Submitted!");
+      toast.dark(`You are now logged in!`, {className: "toast-message",});
     }
   };
 

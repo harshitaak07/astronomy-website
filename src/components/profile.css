@@ -1,0 +1,20 @@
+.containerx{
+    align-items: center;
+    height: 90%;
+    width: 90%;
+    font-size: small;
+    border-radius: 4%;
+    padding: 15px 135px 110px 15px;
+    right: 95%;
+    position: absolute; 
+}
+.dark .containerx{
+    background-color: white;
+    border: 1px solid silver;
+    color: black;
+}
+.light .containerx{
+    background-color:white;
+    border: 1px solid black;
+    color: black;
+}

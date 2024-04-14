@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import HomePage from './components/home';
 import Login from './components/login';
 import RegisterPage from './components/register';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Helmet>
         <title>Astronomy</title>
       </Helmet>
+      <ToastContainer position="top-center"/>
       <Router> 
         <Routes>
           <Route path="/" element={<HomePage />} />

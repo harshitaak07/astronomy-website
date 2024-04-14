@@ -1,0 +1,21 @@
+.containery{
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 90%;
+    font-size: small;
+    border-radius: 4%;
+    padding: 25px 90px 35px 20px;
+    right: 95%;
+    position: absolute; 
+}
+.dark .containery{
+    background-color: white;
+    border: 1px solid silver;
+    color: black;
+}
+.light .containery{
+    background-color:white;
+    border: 1px solid black;
+    color: black;
+}

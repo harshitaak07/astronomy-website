@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
-import { Link } from "react-router-dom";
-function HomePage() {
+import "./home.css";
+import ProfilePage from "./profile";
+function HomePage({details}) {
   const [theme, setTheme] = useState("light");
+  const [visibleDetails, setVisibleDetails] = useState(false);
 
   useEffect(() => {
     document.body.className = theme;
@@ -22,6 +23,9 @@ function HomePage() {
     console.log("Review submitted:", review);
     setReview("");
   };
+  const handleClick = () => {
+      setVisibleDetails(!visibleDetails)
+  }
 
   return (
     <div id="home" class="body">
@@ -49,7 +53,10 @@ function HomePage() {
             <a href="#astronomy">[Astronomy]</a>
           </li>
           <li>
-            <img src="/assets/profile.png" alt="Logo" />
+            <div className="profile-container">
+            <img src="/assets/profile.png" alt="Logo" onClick={handleClick}/>
+            { visibleDetails ? <ProfilePage details={details}/> : null}
+            </div>
           </li>
         </ul>
       </nav>
