@@ -1,0 +1,144 @@
+.page.card-1-page {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: "Source Code Pro", monospace;
+  }
+  .light .page.card-1-page {
+    background-color: transparent;
+    color: black
+  }
+.dark .page.card-1-page {
+    background-color: transparent;
+    color: white;
+}
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .card-1-page .card {
+    position: relative;
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .card-1-page .card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 26px;
+  }
+  
+  .card-1-page .card header h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  
+  .card-1-page .card .front,
+  .card-1-page .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: transparent;
+    border-radius: 10px;
+    padding: 36px 36px 44px 44px;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+  .light .card-1-page .card .front,
+  .light .card-1-page .card .back{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+  .dark .card-1-page .card .front,
+  .dark .card-1-page .card .back{
+    background-color: black;
+    color: white;
+    border: 1px solid silver;
+  }
+  
+.light .card-1-page .card:hover .front,
+.light .card-1-page .card:hover .back {
+  background-color: blueviolet;
+  color: white;
+}
+
+.dark .card-1-page .card:hover .front,
+.dark .card-1-page .card:hover .back {
+  background-color: darkorchid;
+  color: white;
+}
+  
+  .card-1-page .back {
+    transform: rotateY(180deg);
+  }
+  
+  .card-1-page input {
+    position: absolute;
+    scale: 0;
+  }
+  
+  .card-1-page input:checked ~ .card .back {
+    transform: rotateY(0);
+  }
+  
+  .card-1-page input:checked ~ .card .front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card var {
+    font-style: normal;
+    font-size: 80px;
+    line-height: 1;
+  }
+  
+  .card h3 {
+    margin: 0 0 30px;
+    font-weight: 500;
+  }
+  
+  .light #summary :is(var, h3) {
+    color: black;
+  }
+  
+  .light #overdue :is(var, h3) {
+    color: black;
+  }
+  
+  .light #features :is(var, h3) {
+    color: black;
+  }
+  .dark #summary :is(var, h3) {
+    color: white;
+  }
+  
+  .dark #overdue :is(var, h3) {
+    color: white;
+  }
+  
+  .dark #features :is(var, h3) {
+    color: white;
+  }
+  .card :is(h4, p) {
+    opacity: 0.6;
+    font-size: 20px;
+  }
+  
+  .card p {
+    margin-top: 76px;
+  }

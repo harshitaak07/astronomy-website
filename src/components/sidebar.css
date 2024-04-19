@@ -62,6 +62,9 @@
 .sidebar button span{
     transition: 0.3s
 }
-.sidebar button:not(.active):hover{
-    background:white;
+.dark .sidebar button:not(.active):hover{
+    background:darkorchid;
+}
+.light .sidebar button:not(.active):hover{
+    background:blueviolet;
 }

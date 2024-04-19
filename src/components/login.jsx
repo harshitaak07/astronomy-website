@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./regLog.css";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import NavbarPage from "./navbar";
 
 function ValidateForm(formData) {
   const { username, password } = formData;
@@ -43,7 +42,6 @@ const Login = () => {
 
   return (
     <section id="login" className="body">
-      <NavbarPage/>
       <div className="imgBx">
         <img src="assets/astronomyLogin.png" alt="background" />
       </div>

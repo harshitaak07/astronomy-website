@@ -1,0 +1,4 @@
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+  }

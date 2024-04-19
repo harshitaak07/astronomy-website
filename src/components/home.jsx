@@ -1,6 +1,5 @@
 import React, { useState} from "react";
 import "./home.css";
-import NavbarPage from "./navbar";
 function HomePage() {
   const [review, setReview] = useState("");
 
@@ -16,7 +15,6 @@ function HomePage() {
 
   return (
     <div id="home" class="body">
-      <NavbarPage/>
       <div style={{ display: "flex" }}>
         <div className="container2">
           <h1 style={{ textAlign: "left" }}>Welcome!</h1>
@@ -33,7 +31,7 @@ function HomePage() {
                 type="text"
                 id="review"
                 name="review"
-                placeholder="Join Our Team"
+                placeholder="Give Feedback!"
                 value={review}
                 onChange={handleInputChange}
               />

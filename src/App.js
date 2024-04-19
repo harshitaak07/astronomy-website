@@ -8,6 +8,7 @@ import RegisterPage from './components/register';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AstronomyPage from './components/astronomy';
+import NavbarPage from './components/navbar';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <title>Astronomy</title>
       </Helmet>
       <ToastContainer position="top-center"/>
-      <Router> 
+      <Router>
+        <NavbarPage/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
