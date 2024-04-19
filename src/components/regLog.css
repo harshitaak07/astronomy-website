@@ -1,38 +1,49 @@
-
-body {
-    font-family: "Source Code Pro", monospace;
+.body {
     display: flex;
+    font-family: "Source Code Pro", monospace;
     flex-direction: row;
 }
-.dark .body{
-    background-color: black;
-    color: white;
-    height: 100vh;
-}
-.light .body{
+
+.light {
     background-color: white;
     color: black;
-    height: 100vh;
 }
-.hori .container {
-    width: 19%;
-    height: 61%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.imgBx {
+    margin: 8% 0% 0% 9%;
+    flex: 1.5;
+}
+
+.light .imgBx {
+    border: 1px solid black; 
+}
+
+.dark .imgBx {
+    border: 1px solid silver; 
+}
+
+.imgBx img {
+    width: 90%;
+    height: 85%;
+    background-size: cover;
+    object-fit: contain;
+    border-radius: 3%;
+    margin: 4% 0% 10% 0%;
+}
+
+.container {
     display: flex;
     flex-direction: column;
-    padding: 2% 2% 2% 2%;
-    margin: 6% 0% 0% 0%;
-    text-align: left;
-}
-.container{
-    width: 30%;
-    height: 65%;
-    margin: 9% 0% 0% 0%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    flex-direction: column;
     padding: 2% 2% 2% 2%;
     text-align: left;
+    margin: 8% 9% 0% 0%;
+    flex: 1;
 }
 .dark .container{
     background-color: black;
@@ -46,77 +57,57 @@ body {
     margin-bottom: 2%;
     font-size: larger;
 }
+
 .dark .container text:first-child {
     color: darkorchid;
 }
+
 .light .container text:first-child {
-    color:blueviolet;
+    color: blueviolet;
 }
+
 .container text:last-child { 
     font-size: large;
 }
+
 form {
     margin-top: 8%;
 }
+
 .container label {
-    display:block;
+    display: block;
     margin-bottom: 3%;
     margin-top: 2%;
 }
+
 .container input {
     margin-bottom: 2%;
     width: 90%;
     border-radius: 2%;
     padding: 3%;
 }
-.dark .container input{
+
+.dark .container input {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid silver;
     color: white;
 }
-.light .container input{
+
+.light .container input {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     border: 1px solid black;
     color: black;
 }
-section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-}
-.hori section .imgBx {
-    width: 30%;
-    height: 73%;
-    margin: 6% 0% 0 8%;
-}
-section .imgBx {
-    width: 40%;
-    height: 73%;
-    margin: 9% 0% 0 13%;
-}
-.light section .imgBx{
-    border: 1px solid black; 
-}
-.dark section .imgBx{
-    border: 1px solid silver; 
-}
-section .imgBx img {
-    width: 90%;
-    height: 90%;
-    background-size: cover;
-    object-fit: contain;
-    border-radius: 3%;
-    margin: 0% 0 1% 5.5%;
-}
+
 .button-container {
     display: flex;
     flex-direction: column;
     gap: 7%;
     margin-top: 9%; 
 }  
+
 button {
     width: 100%;
     padding: 3%;
@@ -126,10 +117,12 @@ button {
     font-weight: 700;
     margin-top: 5%;
 }
+
 .dark button {
     background-color: darkorchid;
     color: white;
 }
+
 .light button {
     background-color: blueviolet;
     color: white;

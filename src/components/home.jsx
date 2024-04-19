@@ -1,17 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./home.css";
-import ProfilePage from "./profile";
-function HomePage({details}) {
-  const [theme, setTheme] = useState("light");
-  const [visibleDetails, setVisibleDetails] = useState(false);
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
+import NavbarPage from "./navbar";
+function HomePage() {
   const [review, setReview] = useState("");
 
   const handleInputChange = (event) => {
@@ -23,43 +13,10 @@ function HomePage({details}) {
     console.log("Review submitted:", review);
     setReview("");
   };
-  const handleClick = () => {
-      setVisibleDetails(!visibleDetails)
-  }
 
   return (
     <div id="home" class="body">
-      <nav className="topnav">
-        <ul className="ulc">
-          <li>
-            <img
-              src={theme === "dark" ? "/assets/moon.png" : "/assets/sun.png"}
-              alt="Logo"
-              onClick={toggleTheme}
-            />
-          </li>
-          <li>
-            <a className="active" href="#">
-              [Home]
-            </a>
-          </li>
-          <li>
-            <a href="#register">[Register]</a>
-          </li>
-          <li>
-            <a href="#login">[Login]</a>
-          </li>
-          <li>
-            <a href="#astronomy">[Astronomy]</a>
-          </li>
-          <li>
-            <div className="profile-container">
-            <img src="/assets/profile.png" alt="Logo" onClick={handleClick}/>
-            { visibleDetails ? <ProfilePage details={details}/> : null}
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <NavbarPage/>
       <div style={{ display: "flex" }}>
         <div className="container2">
           <h1 style={{ textAlign: "left" }}>Welcome!</h1>

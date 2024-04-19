@@ -1,0 +1,67 @@
+.sidebar{
+    postion: fixed;
+    padding: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+    height: 600px;
+    padding: 0 16px;
+    background: transparent;
+    transition: 0.4s;
+}
+.dark .sidebar{
+    border-right: 1px solid silver;
+}
+.light .sidebar{
+    border-right: 1px solid black;
+}
+.sidebar header{
+    display: flex;
+    align-items: center;
+    height: 72px;
+    border-bottom: 1px solid black;
+    color: white;
+}
+.sidebar header button{
+    width: 100%;
+}
+.sidebar button{
+    position: relative;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0 16px;
+    transition: 0.3s;
+}
+.dark .sidebar button{
+    color: white;
+    background: black;
+    border: 1px solid white;
+}
+.light .sidebar button{
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+.sidebar button span:nth-child(2) {
+    flex: 1 1 auto;
+}
+.sidebar button:is(.active,:hover){
+    background: darkorchid;
+    color: white;
+}
+.sidebar button span{
+    transition: 0.3s
+}
+.sidebar button:not(.active):hover{
+    background:white;
+}

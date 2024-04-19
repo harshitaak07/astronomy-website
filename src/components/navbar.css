@@ -1,0 +1,50 @@
+.topnav{
+    position: fixed;
+    width: 100%;
+    height:auto;
+    top: 1%;
+    z-index: 2; /*z-index used to make navbar appear on top of other elements example: on top of bg of register page*/
+    font-size: small;
+    background-color: transparent;
+}
+.ulc {
+    display: flex;
+    list-style: none;
+    align-items: center; 
+    justify-content: space-between;
+  } 
+  .ulc li:last-child{
+    margin-right: 4%;
+  } 
+.ulc a {
+    font-size: 17px;
+    text-decoration: none;
+}
+.light .ulc a{
+    color: blueviolet;
+}
+.dark .ulc a{
+    color: white
+}
+.ulc a:hover {
+    color: white;
+    padding: 14px 24px;
+}
+.dark .ulc a:hover{
+    background-color: darkorchid;
+}
+.light .ulc a:hover{
+    background-color: blueviolet;
+}
+.dark .ulc a:active{
+    background-color: darkorchid;
+    color: white;
+}
+.light .ulc a:active{
+    background-color: blueviolet;
+    color: black;
+}
+.ulc img {
+    width: 50px;
+    height: auto;
+}  

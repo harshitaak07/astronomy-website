@@ -7,10 +7,11 @@ import Login from './components/login';
 import RegisterPage from './components/register';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AstronomyPage from './components/astronomy';
 
 function App() {
   return (
-    <div className="App" class="hori">
+    <div className="App">
       <Helmet>
         <title>Astronomy</title>
       </Helmet>
@@ -18,10 +19,11 @@ function App() {
       <Router> 
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/astronomy" element={<AstronomyPage />} />
         </Routes>
       </Router>
-      <RegisterPage/>
-      <Login/>
     </div>
   );
 }
