@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and Routes
-import HomePage from './components/home';
-import Login from './components/login';
-import RegisterPage from './components/register';
+import HomePage from './components/home/home';
+import Login from './components/registerandlogin/login';
+import RegisterPage from './components/registerandlogin/register';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AstronomyPage from './components/astronomy';
-import NavbarPage from './components/navbar';
+import AstronomyPage from './components/astronomy/astronomy';
+import NavbarPage from './components/elements/navbar/navbar';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { SideBar } from "./sidebar"; 
-import { Card1 } from "./card";
+import { SideBar } from "../elements/sidebar/sidebar"; 
+import { Card1 } from "../elements/card/card";
 import "./astronomy.css";
 
 const AstronomyPage = () => {

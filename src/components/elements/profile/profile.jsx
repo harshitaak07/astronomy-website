@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./profile.css";
-import LoadErrorCard from "./loadError";
+import LoadErrorCard from "../loadError/loadError";
 
 function ProfilePage({ details }) {
   useEffect(() => {

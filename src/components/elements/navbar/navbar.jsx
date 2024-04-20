@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ProfilePage from "./profile";
+import ProfilePage from "../profile/profile";
 import { FaBars} from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import "./navbar.css";

@@ -84,9 +84,12 @@
         border: none;
         display: flex;
         align-items: center;
-        color:black; 
-        margin-top: 5px;
-        margin-left: 5px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .light .sidebar-header button{
+        color: black;
     }
     .sidebar-header button.active {
         background-color: white;
