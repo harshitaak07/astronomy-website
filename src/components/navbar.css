@@ -3,19 +3,48 @@
     width: 100%;
     height:auto;
     top: 1%;
-    z-index: 2; /*z-index used to make navbar appear on top of other elements example: on top of bg of register page*/
+    z-index: 2; 
     font-size: small;
     background-color: transparent;
+    overflow: hidden;
+}
+.topnav.responsive_nav {
+    flex-direction: column;
+    display: none;
 }
 .ulc {
     display: flex;
     list-style: none;
     align-items: center; 
     justify-content: space-between;
-  } 
-  .ulc li:last-child{
-    margin-right: 4%;
-  } 
+    flex-direction: row;
+} 
+.ulc.responsive{
+    position: fixed;
+    top: 20px;
+    gap: 20px;
+    height: 30%;
+    margin-left: 10px;
+    width: 50%;
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.light .ulc.responsive{
+    color: blueviolet;
+    background-color: white;
+    border: 1px solid black;
+}
+.dark .ulc.responsive{
+    color: white;
+    background-color: black;
+    border: 1px solid silver;
+}
+.ulc li:last-child{
+margin-right: 4%;
+} 
 .ulc a {
     font-size: 17px;
     text-decoration: none;
@@ -48,3 +77,51 @@
     width: 50px;
     height: auto;
 }  
+.nav-btn {
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 4px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+.nav-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: blueviolet;
+}
+.dark .nav-btn span {
+    background-color: white;
+}
+.crossClass{
+    display: none;
+    visibility: hidden;
+}
+@media screen and (max-width: 480px) {
+    .nav-btn{
+        display:block;
+        visibility: visible;
+    }
+    .ulc {
+        display: none; 
+    }
+    .topnav{
+        visibility: hidden;
+    }
+    .topnav.responsive_nav{
+        display: flex;
+        visibility: visible;
+    }
+    .ulc.responsive{
+        display: flex;
+        visibility: visible;
+    }
+    .crossClass{
+        display: flex;
+        visibility: visible;
+    }
+  }

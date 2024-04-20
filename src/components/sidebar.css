@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 8px;
     width: 260px;
-    height: 600px;
+    height: 100%;
     padding: 0 16px;
     background: transparent;
     transition: 0.4s;
@@ -67,4 +67,30 @@
 }
 .light .sidebar button:not(.active):hover{
     background:blueviolet;
+}
+@media screen and (min-width: 768px) and (max-width: 1440px){
+    .sidebar{
+        height: 100%;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 426px){
+    .sidebar{
+        gap: 8px;
+        width: 80%;
+        padding: 0 16px;
+    } 
+    .sidebar-header button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        color:black; 
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .sidebar-header button.active {
+        background-color: white;
+        border-radius: 50%;
+        color: black;
+    }
 }

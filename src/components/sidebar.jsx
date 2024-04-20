@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -18,11 +18,11 @@ const menuItems = [
     }
 ];
 
-const NavHeader = () => (
+const NavHeader = ({ toggleSidebar }) => (
     <header className="sidebar-header">
-        <button type="button">
+        <button type="button" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} />
-            <span>Admin</span>
+            <span></span>
         </button>
     </header>
 );
@@ -44,12 +44,36 @@ const NavButton = ({
 
 export const SideBar = () => {
     const [activeItem, setActiveItem] = useState("");
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const handleClick = ({ item }) => setActiveItem(
         item !== activeItem ? item : ""
     );
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    if (windowWidth >= 320 && windowWidth <= 425 && !isSidebarOpen) {
+        return (
+            <NavHeader toggleSidebar={toggleSidebar} />
+        ); // Hides the sidebar for widths between 320px and 425px when it's closed
+    }
+
     return (
-        <aside className="sidebar">
-            <NavHeader />
+        <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+            <NavHeader toggleSidebar={toggleSidebar} />
             {menuItems.map((item, index) => (
                 <div key={index}>
                     <NavButton

@@ -15,7 +15,7 @@ function HomePage() {
 
   return (
     <div id="home" class="body">
-      <div style={{ display: "flex" }}>
+      <div className= "responsivebanao">
         <div className="container2">
           <h1 style={{ textAlign: "left" }}>Welcome!</h1>
           <p style={{ textAlign: "left" }}>
