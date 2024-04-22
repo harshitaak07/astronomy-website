@@ -59,6 +59,15 @@
     background: darkorchid;
     color: white;
 }
+.nav-link {
+    text-decoration: none;
+}
+.dark .nav-link{
+    color: white;
+}
+.light .nav-link{
+    color: black;
+}
 .sidebar button span{
     transition: 0.3s
 }

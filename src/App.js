@@ -9,6 +9,7 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AstronomyPage from './components/astronomy/astronomy';
 import NavbarPage from './components/elements/navbar/navbar';
+import SharePage from './components/share/share';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/astronomy" element={<AstronomyPage />} />
+          <Route path="/share" element={<SharePage />} />
         </Routes>
       </Router>
     </div>

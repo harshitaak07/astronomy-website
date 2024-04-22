@@ -1,0 +1,201 @@
+.body {
+    display: flex;
+    font-family: "Source Code Pro", monospace;
+    flex-direction: row;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.imgBx {
+    margin: 8% 0% 0% 9%;
+    flex: 1.5;
+}
+
+.light .imgBx {
+    border: 1px solid black; 
+}
+
+.dark .imgBx {
+    border: 1px solid silver; 
+}
+.imgBx label {
+    display: block;
+    text-align: left;
+    margin: 2% 0% 3% 8%;
+}
+.imgBx input {
+    margin-bottom: 2%;
+    width: 80%;
+    height: 270px;
+    border-radius: 2%;
+    padding: 3%;
+}
+.dark .imgBx input {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid silver;
+    color: white;
+}
+.light .imgBx input {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid black;
+    color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 2% 2% 2% 2%;
+    text-align: left;
+    margin: 8% 9% 0% 0%;
+    flex: 1;
+}
+.dark .container{
+    background-color: black;
+    border: 1px solid silver; 
+}
+.light .container{
+    background-color: white;
+    border: 1px solid black;
+}
+.container text:first-child {
+    margin-bottom: 2%;
+    font-size: larger;
+}
+
+.dark .container text:first-child {
+    color: darkorchid;
+}
+
+.light .container text:first-child {
+    color: blueviolet;
+}
+
+.container text:last-child { 
+    font-size: large;
+}
+
+form {
+    margin-top: 8%;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
+.container input {
+    margin-bottom: 2%;
+    width: 90%;
+    border-radius: 2%;
+    padding: 3%;
+}
+.dark .container input {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid silver;
+    color: white;
+}
+
+.light .container input {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid black;
+    color: black;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+    margin-top: 9%; 
+}  
+
+button {
+    width: 100%;
+    padding: 3%;
+    border: none;
+    border-radius: 2%;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 5%;
+}
+
+.dark button {
+    background-color: darkorchid;
+    color: white;
+}
+
+.light button {
+    background-color: blueviolet;
+    color: white;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .imgBx {
+        margin: 12% 0% 0% 9%;
+    }
+    .container {
+        margin: 12% 9% 0% 0%;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 426px){
+    .body {
+        display: flex;
+        font-family: "Source Code Pro", monospace;
+        flex-direction: column;
+    }
+    .imgBx {
+        margin: 20% 0% 0% 5%;
+        width: 90%;
+    }
+    .imgBx img {
+        width: 90%;
+        height: 90%;
+        margin: 4% 0% 10% 0%;
+    }
+    
+    .container {
+        width: 84%;
+        height: 90%;
+        padding: 3% 3% 3% 3%;
+        margin: 15% 9% 0% 5%;
+    }
+    .container text:first-child {
+        margin-bottom: 2%;
+        font-size: larger;
+    }
+    form {
+        margin-top: 8%;
+    }
+    
+    .container label {
+        margin-bottom: 3%;
+        margin-top: 2%;
+    }
+    
+    .container input {
+        margin-bottom: 2%;
+        width: 90%;
+        padding: 3%;
+    }
+    .button-container {
+        gap: 7%;
+        margin-top: 9%; 
+    }  
+    button {
+        width: 100%;
+        padding: 3%;
+        font-weight: 700;
+        margin-top: 5%;
+    }
+}

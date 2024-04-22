@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -15,6 +16,10 @@ const menuItems = [
     },
     {
         name: "My Experiences",
+    },
+    {
+        name: "Share",
+        link: "/share"
     }
 ];
 
@@ -30,15 +35,15 @@ const NavHeader = ({ toggleSidebar }) => (
 const NavButton = ({
     onClick,
     name,
-    icon,
     isActive,
+    icon,
+    link
 }) => (
-    <button 
-        type="button"
-        onClick={() => onClick({item: name})}
-        className={isActive ? "active" : ""}>
-        <FontAwesomeIcon icon={faMoon} />
-        <span>{name}</span>
+    <button type="button" onClick={() => onClick({ item: name })}>
+        <Link to={link} className={`nav-link ${isActive ? "active" : ""}`} onClick={() => onClick({ item: name })}>
+            <FontAwesomeIcon icon={faMoon} />
+            <span style={{ marginLeft: '8px' }}>{name}</span>
+        </Link>
     </button>
 );
 
@@ -68,7 +73,7 @@ export const SideBar = () => {
     if (windowWidth >= 320 && windowWidth <= 425 && !isSidebarOpen) {
         return (
             <NavHeader toggleSidebar={toggleSidebar} />
-        ); // Hides the sidebar for widths between 320px and 425px when it's closed
+        ); 
     }
 
     return (
@@ -81,6 +86,7 @@ export const SideBar = () => {
                         name={item.name}
                         icon={item.icon}
                         isActive={activeItem === item.name}
+                        link={item.link}
                     />
                 </div>
             ))}
