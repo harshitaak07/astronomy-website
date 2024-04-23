@@ -2,39 +2,39 @@ import "./card.css";
 
 const cards = [
   {
-    name: "summary",
-    total: 21,
-    description: "Due Tasks",
-    footer: "Completed: 13",
-    more: "More Information",
+    name: "author",
+    total: "title",
+    description: "description",
+    footer: "tags",
+    more: "passage",
   },
   {
-    name: "overdue",
-    total: 17,
-    description: "Projects",
-    footer: "Yesterday: 9",
-    more: "More Information",
+    name: "author",
+    total: "title",
+    description: "description",
+    footer: "tags",
+    more: "passage",
   },
   {
-    name: "features",
-    total: 38,
-    description: "Proposals",
-    footer: "Implemented: 6",
-    more: "More Information",
+    name: "author",
+    total: "title",
+    description: "description",
+    footer: "tags",
+    more: "passage",
   },
   {
-    name: "features",
-    total: 38,
-    description: "Proposals",
-    footer: "Implemented: 6",
-    more: "More Information",
+    name: "author",
+    total: "title",
+    description: "description",
+    footer: "tags",
+    more: "passage",
   },
   {
-    name: "features",
-    total: 38,
-    description: "Proposals",
-    footer: "Implemented: 6",
-    more: "More Information",
+    name: "author",
+    total: "title",
+    description: "description",
+    footer: "tags",
+    more: "passage",
   },
 ];
 
@@ -48,19 +48,19 @@ export const Card1 = () => {
             <div className="card">
               <div className="front">
                 <header>
-                  <h2>{card.name}</h2>
+                  <h4>{card.name}</h4>
                   <span className="material-symbols-outlined"> more_vert </span>
                 </header>
                 <var>{card.total}</var>
-                <h3>{card.description}</h3>
-                <h4>{card.footer}</h4>
+                <h5>{card.description}</h5>
+                <h5>{card.footer}</h5>
               </div>
               <div className="back">
                 <header>
-                  <h2>{card.name}</h2>
+                  <h4>{card.name}</h4>
                   <span className="material-symbols-outlined"> close </span>
                 </header>
-                <p>More Information</p>
+                <p>{card.more}</p>
               </div>
             </div>
           </label>

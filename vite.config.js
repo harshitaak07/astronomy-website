@@ -6,7 +6,7 @@ module.exports = defineConfig({
   base: '/',
   plugins: [react()],
   server:{
-    port: 3000,
+    port: 4000,
     open: true,
   },
   build: {

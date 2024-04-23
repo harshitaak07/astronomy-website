@@ -1,8 +1,8 @@
 require('dotenv').config();
-const { env } = require('./src/env.js');
+const { env } = require('./src/env');
 
 module.exports = {
-  schema: './server/db/schema.js',
+  schema: './db/schema.js',
   driver: "pg",
   dbCredentials: {
     connectionString: env.POSTGRES_URL,

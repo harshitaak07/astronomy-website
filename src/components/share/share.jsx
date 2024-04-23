@@ -43,8 +43,8 @@ const SharePage = () => {
   
 
   return (
-    <section id="register" className="body">
-      <div className="imgBx">
+    <section id="register" className="body1">
+      <div className="imgBx1">
         <form onSubmit={handleSubmit}>
           <label htmlFor="passage">Content:</label>
           <input
@@ -58,7 +58,7 @@ const SharePage = () => {
         </form>
       </div>
 
-      <div className="container">
+      <div className="container1">
         <text>Get Started!</text>
         <text style={{ textAlign: "left" }}>Share what you have to say!</text>
         <form onSubmit={handleSubmit}>

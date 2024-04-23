@@ -31,7 +31,7 @@ const NavbarPage = ({ details }) => {
   };
 
   const renderNavbar = () => {
-    if (location.pathname === "/astronomy") {
+    if (location.pathname === "/astronomy" || location.pathname === "/share") {
       return null;
     }
     return (
