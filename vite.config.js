@@ -9,6 +9,9 @@ module.exports = defineConfig({
     port: 3000,
     open: true,
   },
+  build: {
+    outDir: 'build', // Specify the output directory
+  },
   test: {
     globals: true,
     environment: 'jsdom',
