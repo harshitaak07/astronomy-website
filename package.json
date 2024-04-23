@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@clerk/clerk-react": "^5.0.0",
     "@drizzle/react-plugin": "^1.5.3",
     "@drizzle/store": "^1.5.3",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",

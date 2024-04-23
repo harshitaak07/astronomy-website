@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./regLog.css";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {SignedOut, SignInButton} from "@clerk/clerk-react";
 
 function ValidateForm(formData) {
   const { username, password } = formData;
@@ -13,7 +14,7 @@ function ValidateForm(formData) {
   }
 
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){2,}.{10,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){}.{10,}$/;
   if (!passwordRegex.test(password)) {
     toast.dark("Invalid password",{className: "toast-message",});
     return false;
@@ -69,8 +70,10 @@ const Login = () => {
           />
           <div className="button-container">
             <button type="submit">Login</button>
-            <button type="button">
-              Sign In with Google
+            <button>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
             </button>
           </div>
         </form>

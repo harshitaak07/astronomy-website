@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./regLog.css";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {SignedOut, SignInButton} from "@clerk/clerk-react";
 
 function ValidateForm(formData) {
   const { name, password, email } = formData;
@@ -16,7 +17,7 @@ function ValidateForm(formData) {
     return false;
   }
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){2,}.{10,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){}.{10,}$/;
   if (!passwordRegex.test(password)) {
     toast.dark("Invalid password",{className: "toast-message",});
     return false;
@@ -84,7 +85,11 @@ const RegisterPage = () => {
             onChange={handleChange}
           />
           <br />
-          <button type="submit">Register</button>
+          <button type="submit">
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            </button>
         </form>
       </div>
     </section>
