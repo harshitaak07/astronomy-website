@@ -1,56 +1,76 @@
 import React, { useState } from "react";
 import "./share.css";
-import {toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const SharePage = () => {
-    const [formData, setFormData] = useState({
-        title: "",
-        description: "",
-        content: "",
-        contentType: "",
-        authorId: "1",
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    passage: "",
+    contentType: "",
+    authorId: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
-    
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post("/api/content", formData);
-            toast.dark(`Submitted!`, {className: "toast-message",});
-            console.log(response.data.message); 
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    };
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { title, description, passage, contentType, authorId } = formData;
+      const newContent = {
+        title,
+        description,
+        passage,
+        contentType,
+        authorId,
+        createdAt: null,
+        updatedAt: null,
+      };
+      const response = await axios.post("/create", newContent);
+      toast.dark(`Submitted!`, { className: "toast-message" });
+      console.log(response.data.message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
 
   return (
     <section id="register" className="body">
       <div className="imgBx">
-        <form>
-        <label htmlFor="content">Content:</label>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="passage">Content:</label>
           <input
             type="text"
-            id="content"
-            name="content"
+            id="passage"
+            name="passage"
             required
-            value={formData.content}
+            value={formData.passage}
             onChange={handleChange}
           />
         </form>
       </div>
 
       <div className="container">
-      <text>Get Started!</text>
+        <text>Get Started!</text>
         <text style={{ textAlign: "left" }}>Share what you have to say!</text>
         <form onSubmit={handleSubmit}>
+        <label htmlFor="id">User:</label>
+          <input
+            type="text"
+            id="authorId"  
+            name="authorId"
+            required
+            value={formData.authorId}
+            onChange={handleChange}
+          />
           <label htmlFor="title">Title:</label>
           <input
             type="text"

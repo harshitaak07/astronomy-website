@@ -41,7 +41,7 @@ export const contents = createTable(
         foreignKeys: {
             authorId: {
                 table: "users",
-                column: "id",
+                column: "name",
             },
         },
     })
