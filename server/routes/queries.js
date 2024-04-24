@@ -18,6 +18,17 @@ async function createContent(newContent) {
     throw new Error("Failed to create content");
   }
 }
+async function getAllContent() {
+  try {
+    const ideaContents = await db.query.contents.findMany({
+      where: (model, { eq }) => eq(model.contentType),
+    });
+    return ideaContents;
+  } catch (error) {
+    console.error('Error fetching contents:', error);
+    throw new Error('Failed to fetch contents');
+  }
+}
 async function getAllIdeas() {
   try {
     const ideaContents = await db.query.contents.findMany({
@@ -186,6 +197,7 @@ async function updateMyExperience(userId, experienceId, updatedContent) {
 
 module.exports = {
   createContent,
+  getAllContent,
   getAllIdeas,
   getAllExperiences,
   getMyIdeas,

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {createContent, getAllIdeas, getAllExperiences, getMyIdeas, getMyExperiences, deleteMyIdea, deleteMyExperience, updateMyIdea, updateMyExperience} = require('./queries');
+const {createContent, getAllIdeas, getAllExperiences, getMyIdeas, getMyExperiences, deleteMyIdea, deleteMyExperience, updateMyIdea, updateMyExperience, getAllContent} = require('./queries');
 router.post("/create", async (req, res) => {
     const { title, description, passage, contentType, authorId } = req.body;
     try {
@@ -9,6 +9,16 @@ router.post("/create", async (req, res) => {
     } catch (error) {
       console.error("Error:", error);
       res.status(500).json({ message: "Failed to insert content" });
+    }
+  });
+
+  router.get("/all", async (req, res) => {
+    try {
+      const allCon = await getAllContent();
+      res.status(200).json(allCon);
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({ message: "Failed to fetch contents" });
     }
   });
   

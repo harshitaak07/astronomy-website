@@ -6,11 +6,11 @@ import axios from "axios";
 
 const SharePage = () => {
   const [formData, setFormData] = useState({
+    authorId: "",
     title: "",
     description: "",
-    passage: "",
     contentType: "",
-    authorId: "",
+    passage: "",
   });
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ const SharePage = () => {
         createdAt: null,
         updatedAt: null,
       };
-      const response = await axios.post("/create", newContent);
+      const response = await axios.post("http://localhost:4000/create", newContent);
       toast.dark(`Submitted!`, { className: "toast-message" });
       console.log(response.data.message);
     } catch (error) {
