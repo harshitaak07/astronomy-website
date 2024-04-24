@@ -94,6 +94,7 @@ async function getMyExperiences(userId) {
     throw new Error('Failed to fetch user experience contents');
   }
 }
+/*
 async function deleteMyIdea(userId, ideaId) {
   try {
     const userIdea = await db.query.contents.findFirst({
@@ -194,7 +195,7 @@ async function updateMyExperience(userId, experienceId, updatedContent) {
     throw new Error('Failed to update experience');
   }
 }
-
+*/
 module.exports = {
   createContent,
   getAllContent,
@@ -202,8 +203,4 @@ module.exports = {
   getAllExperiences,
   getMyIdeas,
   getMyExperiences,
-  deleteMyIdea,
-  deleteMyExperience,
-  updateMyIdea,
-  updateMyExperience
 }

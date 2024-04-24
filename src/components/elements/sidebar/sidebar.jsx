@@ -21,6 +21,10 @@ const menuItems = [
     name: "Share",
     link: "/share",
   },
+  {
+    name: "Go Back",
+    link: "/"
+  }
 ];
 
 const NavHeader = ({ toggleSidebar }) => (

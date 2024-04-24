@@ -63,7 +63,7 @@ router.post("/create", async (req, res) => {
       res.status(500).json({ message: "Failed to fetch user experiences" });
     }
   });
-  
+  /*
   router.delete("/delete-idea/:userId/:ideaId", async (req, res) => {
     const { userId, ideaId } = req.params;
     try {
@@ -113,5 +113,6 @@ router.post("/create", async (req, res) => {
       res.status(500).json({ message: "Failed to update experience" });
     }
   });
+  */
 
   module.exports = router
