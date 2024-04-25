@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import "./regLog.css";
-import {toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {SignedOut, SignInButton} from "@clerk/clerk-react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 function ValidateForm(formData) {
   const { username, password } = formData;
 
   const usernameRegex = /^[a-zA-Z0-9]{1,15}$/;
   if (!usernameRegex.test(username)) {
-    toast.dark("Invalid username",{className: "toast-message",});
+    toast.dark("Invalid username", { className: "toast-message" });
     return false;
   }
 
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){}.{10,}$/;
   if (!passwordRegex.test(password)) {
-    toast.dark("Invalid password",{className: "toast-message",});
+    toast.dark("Invalid password", { className: "toast-message" });
     return false;
   }
 
@@ -37,7 +37,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (ValidateForm(formData)) {
-      toast.dark(`You are now logged in!`, {className: "toast-message",});
+      toast.dark(`You are now logged in!`, { className: "toast-message" });
     }
   };
 
@@ -71,7 +71,12 @@ const Login = () => {
           <div className="button-container">
             <button type="submit">Login</button>
             <button>
-             Sign in with google
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </button>
           </div>
         </form>

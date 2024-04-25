@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import "./regLog.css";
-import {toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {SignedOut, SignInButton} from "@clerk/clerk-react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 function ValidateForm(formData) {
   const { name, password, email } = formData;
 
   const nameRegex = /^[a-zA-Z0-9]{1,15}$/;
   if (!nameRegex.test(name)) {
-    toast.dark("Invalid name",{className: "toast-message",});
+    toast.dark("Invalid name", { className: "toast-message" });
     return false;
   }
   if (!/@\S+\.\S+/.test(email) || email.length > 50) {
-    toast.dark("Invalid email format or length exceeds 50 characters",{className: "toast-message",});
+    toast.dark("Invalid email format or length exceeds 50 characters", {
+      className: "toast-message",
+    });
     return false;
   }
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\/-]){}.{10,}$/;
   if (!passwordRegex.test(password)) {
-    toast.dark("Invalid password",{className: "toast-message",});
+    toast.dark("Invalid password", { className: "toast-message" });
     return false;
   }
 
@@ -41,7 +48,7 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (ValidateForm(formData)) {
-      toast.dark(`You are now registered!`,{className: "toast-message",});
+      toast.dark(`You are now registered!`, { className: "toast-message" });
     }
   };
 
@@ -52,7 +59,7 @@ const RegisterPage = () => {
       </div>
 
       <div className="container">
-      <text>Get Started!</text>
+        <text>Get Started!</text>
         <text style={{ textAlign: "left" }}>Begin By Registering</text>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
@@ -86,8 +93,13 @@ const RegisterPage = () => {
           />
           <br />
           <button type="submit">
-            Register
-            </button>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </button>
         </form>
       </div>
     </section>
