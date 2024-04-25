@@ -63,6 +63,7 @@ const SharePage = () => {
           style={{
             width: "85%",
             marginTop: "2%",
+            height: "8%",
             color: "white",
             textDecoration: "none",
           }}

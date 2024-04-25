@@ -71,9 +71,7 @@ const Login = () => {
           <div className="button-container">
             <button type="submit">Login</button>
             <button>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
+             Sign in with google
             </button>
           </div>
         </form>

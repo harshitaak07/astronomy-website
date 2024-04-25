@@ -86,9 +86,7 @@ const RegisterPage = () => {
           />
           <br />
           <button type="submit">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
+            Register
             </button>
         </form>
       </div>
