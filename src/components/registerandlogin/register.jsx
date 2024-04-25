@@ -92,7 +92,8 @@ const RegisterPage = () => {
             onChange={handleChange}
           />
           <br />
-          <button type="submit">
+          <button type="submit">Register</button>
+          <button>
             <SignedOut>
               <SignInButton />
             </SignedOut>

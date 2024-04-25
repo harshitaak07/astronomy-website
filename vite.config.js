@@ -10,7 +10,7 @@ module.exports = defineConfig({
     open: true,
   },
   build: {
-    outDir: 'build', // Specify the output directory
+    outDir: 'dist', // Specify the output directory
   },
   test: {
     globals: true,
