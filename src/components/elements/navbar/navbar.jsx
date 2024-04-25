@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ProfilePage from "../profile/profile";
 import { FaBars} from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import "./navbar.css";
 
 const NavbarPage = ({ details }) => {
   const [theme, setTheme] = useState("light");
-  const [visibleDetails, setVisibleDetails] = useState(false);
   const [showMenu, setShowMenu] = useState(false); 
   const location = useLocation();
 
@@ -26,10 +24,6 @@ const NavbarPage = ({ details }) => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const handleClick = () => {
-    setVisibleDetails(!visibleDetails);
-  };
-
   const renderNavbar = () => {
     if (location.pathname === "/astronomy" || location.pathname === "/share") {
       return null;
@@ -45,9 +39,7 @@ const NavbarPage = ({ details }) => {
                 <img
                   src="/assets/profile.png"
                   alt="Profile"
-                  onClick={handleClick}
                 />
-                {visibleDetails && <ProfilePage details={details} />}
               </div>
               <RxCross2 size="40" onClick={() => setShowMenu(false)} className="crossClass" />
             </div>
