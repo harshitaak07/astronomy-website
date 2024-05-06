@@ -35,7 +35,7 @@ const SharePage = () => {
         updatedAt: null,
       };
       const response = await axios.post(
-        "http://localhost:4000/create",
+        "/create",
         newContent
       );
       toast.dark(`Submitted!`, { className: "toast-message" });

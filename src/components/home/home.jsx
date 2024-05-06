@@ -14,7 +14,7 @@ function HomePage() {
   };
 
   return (
-    <div id="home" class="body">
+    <div id="home" className="body">
       <div className= "responsivebanao">
         <div className="container2">
           <h1 style={{ textAlign: "left" }}>Welcome!</h1>
