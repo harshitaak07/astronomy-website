@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./regLog.css";
+import "./regLog.css"; // Importing stylesheet for Login component
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
+// Function to validate form data
 function ValidateForm(formData) {
   const { username, password } = formData;
 
@@ -24,16 +25,19 @@ function ValidateForm(formData) {
 }
 
 const Login = () => {
+  // State to manage form data
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
 
+  // Function to handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (ValidateForm(formData)) {
@@ -70,6 +74,7 @@ const Login = () => {
           />
           <div className="button-container">
             <button type="submit">Login</button>
+            {/* Conditional rendering of Sign In or User button */}
             <button>
               <SignedOut>
                 <SignInButton />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./regLog.css";
+import "./regLog.css"; // Importing stylesheet for RegisterPage component
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -9,6 +9,7 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 
+// Function to validate form data
 function ValidateForm(formData) {
   const { name, password, email } = formData;
 
@@ -34,17 +35,20 @@ function ValidateForm(formData) {
 }
 
 const RegisterPage = () => {
+  // State to manage form data
   const [formData, setFormData] = useState({
     name: "",
     password: "",
     email: "",
   });
 
+  // Function to handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (ValidateForm(formData)) {
@@ -93,6 +97,7 @@ const RegisterPage = () => {
           />
           <br />
           <button type="submit">Register</button>
+          {/* Conditional rendering of Sign In or User button */}
           <button>
             <SignedOut>
               <SignInButton />

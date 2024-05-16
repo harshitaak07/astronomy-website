@@ -1,7 +1,8 @@
 import React from "react";
-import "./loadError.css";
+import "./loadError.css"; // Importing stylesheet for LoadErrorCard component
 
 function LoadErrorCard({ isLoading, error, submit }) {
+  // Display loading message if isLoading is true
   if (isLoading) {
     return (
       <div className="containery">
@@ -10,6 +11,7 @@ function LoadErrorCard({ isLoading, error, submit }) {
     );
   }
 
+  // Display error message if error exists
   if (error) {
     return (
       <div className="containery">
@@ -17,6 +19,8 @@ function LoadErrorCard({ isLoading, error, submit }) {
       </div>
     );
   }
+
+  // If neither loading nor error, return null
   return null;
 }
 

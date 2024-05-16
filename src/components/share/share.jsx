@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "./share.css";
+import "./share.css"; // Importing stylesheet for SharePage component
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import axios from "axios"; // Importing axios for making HTTP requests
+import { Link } from "react-router-dom"; // Importing Link for navigation
 
 const SharePage = () => {
+  // State to manage form data
   const [formData, setFormData] = useState({
     authorId: "",
     title: "",
@@ -14,6 +15,7 @@ const SharePage = () => {
     passage: "",
   });
 
+  // Function to handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,6 +23,7 @@ const SharePage = () => {
     });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -34,10 +37,8 @@ const SharePage = () => {
         createdAt: null,
         updatedAt: null,
       };
-      const response = await axios.post(
-        "/create",
-        newContent
-      );
+      // Sending POST request to create new content
+      const response = await axios.post("/create", newContent);
       toast.dark(`Submitted!`, { className: "toast-message" });
       console.log(response.data.message);
     } catch (error) {
@@ -48,6 +49,7 @@ const SharePage = () => {
   return (
     <section id="register" className="body1">
       <div className="imgBx1">
+        {/* Form for submitting content */}
         <form onSubmit={handleSubmit}>
           <label htmlFor="passage">Content:</label>
           <input
@@ -59,6 +61,7 @@ const SharePage = () => {
             onChange={handleChange}
           />
         </form>
+        {/* Button to navigate back to astronomy page */}
         <button
           style={{
             width: "85%",
@@ -80,6 +83,7 @@ const SharePage = () => {
       <div className="container1">
         <text>Get Started!</text>
         <text style={{ textAlign: "left" }}>Share what you have to say!</text>
+        {/* Form for submitting content details */}
         <form onSubmit={handleSubmit}>
           <label htmlFor="id">User:</label>
           <input

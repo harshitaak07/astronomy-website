@@ -1,21 +1,25 @@
-import React, { useState} from "react";
-import "./home.css";
+import React, { useState } from "react";
+import "./home.css"; // Importing stylesheet for HomePage component
+
 function HomePage() {
+  // State to manage the review input
   const [review, setReview] = useState("");
 
+  // Function to handle input change
   const handleInputChange = (event) => {
-    setReview(event.target.value);
+    setReview(event.target.value); // Update the review state with the input value
   };
 
+  // Function to handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Review submitted:", review);
-    setReview("");
+    event.preventDefault(); // Prevent the default form submission behavior
+    console.log("Review submitted:", review); // Log the submitted review
+    setReview(""); // Clear the review input after submission
   };
 
   return (
     <div id="home" className="body">
-      <div className= "responsivebanao">
+      <div className="responsivebanao">
         <div className="container2">
           <h1 style={{ textAlign: "left" }}>Welcome!</h1>
           <p style={{ textAlign: "left" }}>
@@ -26,6 +30,7 @@ function HomePage() {
             celestial myths.
           </p>
           <div className="container3">
+            {/* Form for submitting a review */}
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
